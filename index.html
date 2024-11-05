@@ -4,6 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/app.js" defer></script>
   </head>
-  <body></body>
+  <body class="">
+    <header>
+      <nav class="nav">
+        <div>
+          <i id="colorModeToggle" class="fa-solid fa-moon"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="calculator__container">
+        <div class="result__container">
+          <p class="operation">1 + 1</p>
+          <p class="result">2</p>
+        </div>
+
+        <div class="buttons__container">
+          <div class="button" id="AC">
+            <p>AC</p>
+          </div>
+          <div class="button" id="delete">
+            <i class="fa-solid fa-delete-left"></i>
+          </div>
+          <div class="button secondary--button" id="division">
+            <p>/</p>
+          </div>
+          <div class="button secondary--button" id="multiplication">
+            <p>*</p>
+          </div>
+          <div class="button number--button" data-number="7">
+            <p>7</p>
+          </div>
+          <div class="button number--button" data-number="8">
+            <p>8</p>
+          </div>
+          <div class="button number--button" data-number="9">
+            <p>9</p>
+          </div>
+          <div class="button secondary--button" id="subtraction">
+            <p>-</p>
+          </div>
+          <div class="button number--button" data-number="4">
+            <p>4</p>
+          </div>
+          <div class="button number--button" data-number="5">
+            <p>5</p>
+          </div>
+          <div class="button number--button" data-number="6">
+            <p>6</p>
+          </div>
+          <div class="button secondary--button" id="addition">
+            <p>+</p>
+          </div>
+          <div class="button number--button" data-number="1">
+            <p>1</p>
+          </div>
+          <div class="button number--button" data-number="2">
+            <p>2</p>
+          </div>
+          <div class="button number--button" data-number="3">
+            <p>3</p>
+          </div>
+          <div class="button number--button" data-number="0">
+            <p>0</p>
+          </div>
+          <div class="button number--button" id="dot">
+            <p>.</p>
+          </div>
+          <div class="button button--equal" id="equal">
+            <p>=</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p>Made by <a href="">@Johanh0</a></p>
+      </div>
+    </footer>
+  </body>
 </html>
