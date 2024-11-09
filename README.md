@@ -37,3 +37,13 @@ This project is a simple **calculator** built using **HTML**, **CSS**, and **Jav
 To try out the live version of the project, click the following link:
 
 [Live Demo](https://johanh0.github.io/Calculator/)
+
+## Author
+
+- [@Johanh0](https://www.github.com/johanh0)
+
+## Support or contact
+
+For support or if you wish to contact me, please email me at [johanherrera20000@gmail.com](mailto:johanherrera20000@gmail.com).
+
+You can also contact me via [LinkedIn](https://www.linkedin.com/in/johanh0/).
