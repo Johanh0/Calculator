@@ -86,6 +86,10 @@ inputForm.addEventListener("submit", (event) => {
 // Calculate the input value
 function calculate() {
   const result = eval(inputResult.value);
+  if (result === undefined) {
+    return;
+  }
+
   operationElement.textContent = inputResult.value;
   inputResult.value = result;
 }
@@ -104,7 +108,3 @@ colorModeToggle.addEventListener("click", () => {
     colorModeToggle.classList.add("fa-sun");
   }
 });
-
-// function calculate() {
-//   const result = eval()
-// }
