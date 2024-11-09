@@ -86,7 +86,14 @@ inputForm.addEventListener("submit", (event) => {
 // Calculate the input value
 function calculate() {
   const result = eval(inputResult.value);
+
   if (result === undefined) {
+    return;
+  }
+
+  if (result === Infinity) {
+    alert("You can't divide by 0");
+    inputResult.value = "";
     return;
   }
 
