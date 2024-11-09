@@ -36,4 +36,4 @@ This project is a simple **calculator** built using **HTML**, **CSS**, and **Jav
 
 To try out the live version of the project, click the following link:
 
-[Live Demo](https://your-username.github.io/Calculator)
+[Live Demo](https://johanh0.github.io/Calculator/)
