@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* Light Scheme Color */
+  --bg-color-lightScheme: #f7f8fb;
+  --text-color-lightScheme: #424242;
+  --primary-color-lightScheme: #38b9ff;
+  --secondary-color-lightScheme: #ade2ff;
+  --btn-color-lightScheme: #fff;
+
+  /* Dark Scheme Color */
+  --bg-color-darkScheme: #17181a;
+  --text-color-darkScheme: #fff;
+  --primary-color-darkScheme: #29a8ff;
+  --secondary-color-darkScheme: #005db2;
+  --btn-color-darkScheme: #303136;
+  --secondary-btn-color-darkScheme: #a5a5a5;
+
+  /* Colors */
+  --gray: #818181;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", serif;
+}
+
+body {
+  display: grid;
+  height: fit-content;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+body :where(header, main, footer) {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+/* Dark Mode */
+body.dark--mode {
+  background-color: var(--bg-color-darkScheme);
+  color: var(--text-color-darkScheme);
+
+  & nav div i {
+    color: var(--primary-color-darkScheme);
+  }
+
+  & #AC,
+  #delete {
+    background-color: var(--gray);
+    color: var(--secondary-btn-color-darkScheme);
+  }
+
+  & .button.secondary--button,
+  #equal {
+    background-color: var(--secondary-color-darkScheme);
+    color: var(--primary-color-darkScheme);
+  }
+
+  & div input {
+    color: white;
+  }
+
+  & footer div p a {
+    color: var(--primary-color-darkScheme);
+  }
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  color: var(--primary-color-lightScheme);
+
+  & div i {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.calculator__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 15px;
+}
+
+.result__container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  & .operation {
+    font-size: 2.4rem;
+    color: var(--gray);
+    height: 24px;
+  }
+
+  & .result {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  & div,
+  div form input {
+    width: 100%;
+    text-align: end;
+    font-size: 4.8rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+.buttons__container {
+  display: grid;
+  grid-template-areas:
+    "AC delete division multiplication"
+    "7 8 9 subtraction"
+    "4 5 6 addition"
+    "1 2 3 addition"
+    "zero zero dot equal";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#AC {
+  grid-area: AC;
+}
+
+#delete {
+  grid-area: delete;
+}
+
+#division {
+  grid-area: division;
+}
+
+#multiplication {
+  grid-area: multiplication;
+}
+
+div[data-value="7"] {
+  grid-area: "7";
+}
+
+div[data-value="8"] {
+  grid-area: " 8";
+}
+
+div[data-value="9"] {
+  grid-area: "9";
+}
+
+#subtraction {
+  grid-area: subtraction;
+}
+
+div[data-value="94"] {
+  grid-area: "4";
+}
+
+div[data-value="5"] {
+  grid-area: "5";
+}
+
+div[data-value="6"] {
+  grid-area: "6";
+}
+
+#addition {
+  grid-area: addition;
+}
+
+div[data-value="1"] {
+  grid-area: "1";
+}
+
+div[data-value="2"] {
+  grid-area: "2";
+}
+
+div[data-value="3"] {
+  grid-area: "3";
+}
+
+div[data-value="0"] {
+  grid-area: zero;
+}
+
+#dot {
+  grid-area: dot;
+}
+
+#equal {
+  grid-area: equal;
+  background-color: var(--primary-color-lightScheme);
+  color: white;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--bg-color-lightScheme);
+  color: var(--primary-color-darkScheme);
+
+  /* font-weight: bold; */
+}
+
+.button.secondary--button {
+  background-color: var(--secondary-color-lightScheme);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  & div p {
+    font-size: 1.5rem;
+
+    & a {
+      text-decoration: none;
+      color: var(--primary-color-lightScheme);
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  main {
+    padding: 50px 10px;
+  }
+}
