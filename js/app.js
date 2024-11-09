@@ -11,14 +11,35 @@ const colorModeToggle = document.querySelector("#colorModeToggle");
 const bodyElement = document.querySelector("body");
 
 const calculatorPattern = /^[0-9+\-*/.]+$/;
-
+const mathOperators = /[\/\*\+\-=]/;
+const operationElement = document.querySelector(".operation");
+const inputForm = document.querySelector("#input--form");
 const allButtons = document.querySelectorAll(".button");
 const deleteButton = document.querySelector("#delete");
 const acButton = document.querySelector("#AC");
+const equalButton = document.querySelector("#equal");
 const inputResult = document.querySelector("#result");
 
 // Check if the input the user is typing is only numbers or mathematical operators
-inputResult.addEventListener("input", checkPattern);
+inputResult.addEventListener("input", () =>
+  calculatorPattern.test(inputResult.value) ? "" : (inputResult.value = "")
+);
+
+// Check the input and format the input
+// inputResult.addEventListener("input", () => {
+//   const inputArr = inputResult.value.split("");
+
+//   inputArr.forEach((value, index) => {
+//     if (mathOperators.test(value)) {
+//       inputArr[index] = ` ${value} `;
+//     }
+//   });
+
+//   const inputString = inputArr.join(" ");
+
+//   inputResult.value = inputString;
+//   console.log(inputArr);
+// });
 
 // Delete last input
 deleteButton.addEventListener("click", () => {
@@ -26,9 +47,9 @@ deleteButton.addEventListener("click", () => {
   const inputArr = inputResult.value.split("");
   inputArr.pop();
 
-  const inputString = inputArr.toString();
+  const inputString = inputArr.join("");
 
-  inputResult.value = inputString.replaceAll(",", "");
+  inputResult.value = inputString;
 });
 
 // Delete all the input value
@@ -40,6 +61,8 @@ acButton.addEventListener("click", () => {
 allButtons.forEach((button) => {
   // console.log(button);
   const buttonValue = button.dataset.value;
+
+  // Add value into the input
   button.addEventListener("click", () => {
     if (
       buttonValue === "ac" ||
@@ -51,14 +74,23 @@ allButtons.forEach((button) => {
 
     inputResult.value += buttonValue;
   });
-
-  // console.log(button.dataset.value);
 });
 
-function checkPattern() {
-  calculatorPattern.test(inputResult.value) ? "" : (inputResult.value = "");
+// Event listeners to invoke the calculation of the input
+equalButton.addEventListener("click", calculate);
+inputForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  calculate();
+});
+
+// Calculate the input value
+function calculate() {
+  const result = eval(inputResult.value);
+  operationElement.textContent = inputResult.value;
+  inputResult.value = result;
 }
 
+// Change color mode
 colorModeToggle.addEventListener("click", () => {
   bodyElement.classList.toggle("dark--mode");
 
@@ -72,3 +104,7 @@ colorModeToggle.addEventListener("click", () => {
     colorModeToggle.classList.add("fa-sun");
   }
 });
+
+// function calculate() {
+//   const result = eval()
+// }

@@ -117,6 +117,7 @@ main {
   & .operation {
     font-size: 2.4rem;
     color: var(--gray);
+    height: 24px;
   }
 
   & .result {
@@ -126,7 +127,8 @@ main {
     gap: 15px;
   }
 
-  & div input {
+  & div,
+  div form input {
     width: 100%;
     text-align: end;
     font-size: 4.8rem;
